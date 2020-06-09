@@ -44,7 +44,7 @@
             <label for="">Telefone</label>
             <input type="text" class="form-control" id="telefone">
             </div>
-            <div class="form-group">
+            <div class="form-group" hidden>
                 <label for="" >Status</label>
                 <select id="status" class="form-control">
                     <option value="ativado">Ativo</option> 
@@ -53,6 +53,24 @@
             <div class="form-group">
             <label for="">Senha</label>
             <input type="password" class="form-control" id="senha">
+            </div>
+            <div class="form-group" hidden>
+                <label for="" >Entrada</label>
+                <select id="entrada" class="form-control">
+                    <option value=0>Ativo</option> 
+                </select>
+            </div>
+            <div class="form-group" hidden>
+                <label for="" >Saída</label>
+                <select id="saida" class="form-control">
+                    <option value=0>Ativo</option> 
+                </select>
+            </div>
+            <div class="form-group" hidden>
+                <label for="" >Saldo</label>
+                <select id="saldo" class="form-control">
+                    <option value=0>Ativo</option> 
+                </select>
             </div>
             <div>
             <button class="btn btn-success" type="button" onclick="cadUsuario()">Salvar</button>
