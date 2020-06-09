@@ -8,9 +8,12 @@
     const cep = document.getElementById("cep").value;
     const senha = document.getElementById("senha").value;
     const status = document.getElementById("status").value;
+    const entrada = document.getElementById("entrada").value;
+    const saida = document.getElementById("saida").value;
+    const saldo = document.getElementById("saldo").value;
     // let id = usuarios.length;
     const usuario = {id: Date.now(),
-        nome, endereco, telefone, email, cep, senha, status};
+        nome, endereco, telefone, email, cep, senha, status, entrada, saida, saldo};
         usuarios.push(usuario); 
     // gravar no localstorage
     window.localStorage.setItem("usuarios",JSON.stringify(usuarios));   
@@ -35,9 +38,12 @@
     const cep = document.getElementById("cep").value;
     const senha = document.getElementById("senha").value;
     const status = document.getElementById("status").value;
+    const entrada = document.getElementById("entrada").value;
+    const saida = document.getElementById("saida").value;
+    const saldo = document.getElementById("saldo").value;
     let id = usuarios.length;
     const usuario = {id: id++,
-        nome, endereco, telefone, email, cep, senha, status};
+        nome, endereco, telefone, email, cep, senha, status, entrada, saida, saldo};
         //usuarios.push(usuario); 
     // gravar no localstorage
     //window.localStorage.setItem("usuarios",JSON.stringify([]));
@@ -218,5 +224,26 @@
         
         }
     }
+
+    function addentrada(id){
+        let usuariosGravados = JSON.parse(window.localStorage.getItem("usuarios"));
+        for(let i = 0; i < usuariosGravados.length; i++){
+        if(usuariosGravados[i].id == id){  
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Entrada cadastrado com sucesso!!!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+             const entrada = document.getElementById("addentrada").value;
+             let usuarioIndex = usuarios.findIndex(usuario => usuario.id = id); 
+             usuarios[usuarioIndex] = {id,nome, endereco, telefone, email, cep, status, entrada, saida};
+             document.getElementById("entrada").value =  usuarios[i].entrada;
+            }
+        }
+
+    }
+
+
 
     listarUsuarios();
